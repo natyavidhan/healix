@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">Health Vitals</h1>
+        <p class="lead">Track and monitor your important health metrics over time.</p>
+    </div>
+</div>
+
+        <div class="row mb-4">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="vitals-icon mb-3">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h5>Blood Pressure</h5>
+                        <div class="placeholder-content py-3">
+                            <p class="text-muted">No data recorded</p>
+                            <button class="btn btn-sm btn-outline-primary">Record Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="vitals-icon mb-3">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h5>Heart Rate</h5>
+                        <div class="placeholder-content py-3">
+                            <p class="text-muted">No data recorded</p>
+                            <button class="btn btn-sm btn-outline-primary">Record Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="vitals-icon mb-3">
+                            <i class="bi bi-ladder"></i>
+                        </div>
+                        <h5>Weight</h5>
+                        <div class="placeholder-content py-3">
+                            <p class="text-muted">No data recorded</p>
+                            <button class="btn btn-sm btn-outline-primary">Record Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="vitals-icon mb-3">
+                            <i class="bi bi-droplet"></i>
+                        </div>
+                        <h5>Blood Glucose</h5>
+                        <div class="placeholder-content py-3">
+                            <p class="text-muted">No data recorded</p>
+                            <button class="btn btn-sm btn-outline-primary">Record Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title mb-0">Trends & History</h5>
+                    </div>
+                    <div class="card-body text-center py-5">
+                        <div class="placeholder-content">
+                            <i class="bi bi-graph-up text-muted mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="text-muted">Start tracking your vitals to see trends</h5>
+                            <p class="text-muted">Charts and insights will appear here once you have recorded data</p>
+                            <button class="btn btn-primary mt-2">Record Your First Vitals</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

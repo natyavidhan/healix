@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">Dashboard</h1>
+    </div>
+</div>
+
+        <div class="row mb-4">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Health Summary</h5>
+                        <p class="card-text text-muted">Welcome back, {{ data.user }}. Here's your health overview.</p>
+                        <div class="d-flex justify-content-center">
+                            <div class="health-status-circle">
+                                <div class="status-good">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                </div>
+                                <p>Looking Good!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Upcoming Appointments</h5>
+                        <div class="placeholder-content d-flex flex-column justify-content-center align-items-center py-4">
+                            <i class="bi bi-calendar-date text-muted mb-2" style="font-size: 2rem;"></i>
+                            <p class="text-muted">No upcoming appointments</p>
+                            <button class="btn btn-sm btn-outline-primary">Add Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Medication Reminders</h5>
+                        <div class="placeholder-content d-flex flex-column justify-content-center align-items-center py-4">
+                            <i class="bi bi-capsule text-muted mb-2" style="font-size: 2rem;"></i>
+                            <p class="text-muted">No active medications</p>
+                            <button class="btn btn-sm btn-outline-primary">Add Medication</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-8 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title mb-0">Recent Reports</h5>
+                    </div>
+                    <div class="card-body">
+                        {% if data.recent_reports %}
+                            <ul class="list-group list-group-flush">
+                                {% for report in data.recent_reports %}
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="mb-0">{{ report.name }}</h6>
+                                            <small class="text-muted">{{ report.date }}</small>
+                                        </div>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <div class="placeholder-content d-flex flex-column justify-content-center align-items-center py-4">
+                                <i class="bi bi-file-earmark-medical text-muted mb-2" style="font-size: 2rem;"></i>
+                                <p class="text-muted">No reports uploaded yet</p>
+                                <a href="{{ url_for('upload_report') }}" class="btn btn-primary">Upload Your First Report</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title mb-0">Vitals Tracking</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="placeholder-content d-flex flex-column justify-content-center align-items-center py-4">
+                            <i class="bi bi-heart-pulse text-muted mb-2" style="font-size: 2rem;"></i>
+                            <p class="text-muted">Start tracking your vitals</p>
+                            <a href="{{ url_for('vitals') }}" class="btn btn-outline-primary">Record Vitals</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

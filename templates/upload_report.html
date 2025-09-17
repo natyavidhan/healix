@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Upload Medical Report</h4>
+            </div>
+            <div class="card-body">
+                        
+                        <form method="POST" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="reportType" class="form-label">Report Type</label>
+                                <select class="form-select" id="reportType" name="reportType">
+                                    <option value="" selected disabled>Select Report Type</option>
+                                    <option value="labTest">Lab Test</option>
+                                    <option value="imaging">Imaging (X-ray, MRI, etc.)</option>
+                                    <option value="prescription">Prescription</option>
+                                    <option value="discharge">Hospital Discharge</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="reportDate" class="form-label">Report Date</label>
+                                <input type="date" class="form-control" id="reportDate" name="reportDate">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="reportName" class="form-label">Report Name/Description</label>
+                                <input type="text" class="form-control" id="reportName" name="reportName" placeholder="e.g. Annual Blood Test">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="file" class="form-label">Upload File (PDF, JPG, PNG)</label>
+                                <input class="form-control" type="file" id="file" name="file" accept=".pdf,.jpg,.jpeg,.png,.gif">
+                                <div class="form-text">Maximum file size: 16MB</div>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Upload Report</button>
+                                <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
