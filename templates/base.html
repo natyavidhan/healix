@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">
                 <span class="logo">Healix</span>
@@ -27,19 +27,34 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url_for('dashboard') %}active{% endif %}" href="{{ url_for('dashboard') }}">Dashboard</a>
+                        <a class="nav-link {% if request.path == url_for('index') %}active{% endif %}" href="{{ url_for('index') }}">
+                            <i class="bi bi-house-door nav-icon"></i>Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url_for('upload_report') %}active{% endif %}" href="{{ url_for('upload_report') }}">Upload Report</a>
+                        <a class="nav-link {% if request.path == url_for('dashboard') %}active{% endif %}" href="{{ url_for('dashboard') }}">
+                            <i class="bi bi-speedometer2 nav-icon"></i>Dashboard
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url_for('vitals') %}active{% endif %}" href="{{ url_for('vitals') }}">Vitals</a>
+                        <a class="nav-link {% if request.path == url_for('upload_report') %}active{% endif %}" href="{{ url_for('upload_report') }}">
+                            <i class="bi bi-file-earmark-arrow-up nav-icon"></i>Upload Report
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url_for('reminders') %}active{% endif %}" href="{{ url_for('reminders') }}">Reminders</a>
+                        <a class="nav-link {% if request.path == url_for('vitals') %}active{% endif %}" href="{{ url_for('vitals') }}">
+                            <i class="bi bi-heart-pulse nav-icon"></i>Vitals
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url_for('settings') %}active{% endif %}" href="{{ url_for('settings') }}">Settings</a>
+                        <a class="nav-link {% if request.path == url_for('reminders') %}active{% endif %}" href="{{ url_for('reminders') }}">
+                            <i class="bi bi-bell nav-icon"></i>Reminders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == url_for('settings') %}active{% endif %}" href="{{ url_for('settings') }}">
+                            <i class="bi bi-gear nav-icon"></i>Settings
+                        </a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
@@ -53,7 +68,7 @@
                         </label>
                     </div>
                     <div class="profile-icon">
-                        <a href="#" class="text-dark">
+                        <a href="#" class="profile-link">
                             <i class="bi bi-person-circle fs-4"></i>
                         </a>
                     </div>

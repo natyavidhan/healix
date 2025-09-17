@@ -38,13 +38,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar scroll behavior
     const navbar = document.querySelector('.navbar');
     
-    window.addEventListener('scroll', function() {
+    function updateNavbarClass() {
         if (window.scrollY > 50) {
             navbar.classList.add('navbar-scrolled');
         } else {
             navbar.classList.remove('navbar-scrolled');
         }
-    });
+    }
+    
+    // Initial call to set the class correctly on page load
+    updateNavbarClass();
+    
+    // Update on scroll
+    window.addEventListener('scroll', updateNavbarClass);
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
